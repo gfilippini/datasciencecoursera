@@ -39,9 +39,15 @@ first_hospital <- function(data,state,outcome) {
 
 ## The validate_args function makes the validation on the arguments passed to
 ## the function best
+## if it fails to validate the argumnets it trows an exception with the stop
+## function and prints a error message
 validate_args <- function(data,state,outcome){
   valid_outcomes<-c('pneumonia','heart attack','heart failure')
   valid_states<-unique(data["State"])
-  isTRUE(valid_outcomes[valid_outcomes==outcome]==outcome)
-  isTRUE(valid_states[valid_states==state]==state)
+  if (!isTRUE(valid_outcomes[valid_outcomes==outcome]==outcome)) {
+    stop("invalid otcome")
+  }
+  if (!isTRUE(valid_states[valid_states==state]==state)) {
+    stop("invalid state")
+  }
 }
