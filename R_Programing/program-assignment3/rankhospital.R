@@ -45,7 +45,7 @@ rankhospital <- function(state,outcome,num="best"){
   valid_outcomes<-c('pneumonia','heart attack','heart failure')
   valid_states<-unique(data["State"])
   if (!isTRUE(valid_outcomes[valid_outcomes==outcome]==outcome)) {
-    stop("invalid otcome")
+    stop("invalid outcome")
   }
   if (!isTRUE(valid_states[valid_states==state]==state)) {
     stop("invalid state")

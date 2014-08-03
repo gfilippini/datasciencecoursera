@@ -51,7 +51,7 @@ rankall<-function(outcome,num="best"){
   ## check that oucome is valid
   valid_outcomes<-c('pneumonia','heart attack','heart failure')
     if (!isTRUE(valid_outcomes[valid_outcomes==outcome]==outcome)) {
-    stop("invalid otcome")
+    stop("invalid outcome")
   }
   ## create a list of states
   valid_states<-unique(data[,"State"])
