@@ -31,7 +31,7 @@ hospitalrank<-function(data,state,outcome){
   ## selects the state to be analysed
   n_out <- data[data["State"]==state,]
   ## removes NA for an outcome
-  n_out <- n_out[!is.na(n_out[,3]),]
+  n_out <- n_out[!is.na(n_out[,outcome]),]
   ## order and selects the outcome to be analysed
   n_out <- n_out[order(n_out[outcome],n_out["Hospital.Name"]),]
 }
